@@ -15,4 +15,4 @@ install:
   - docker pull mongo
 
 script:
-  - mvn -f Mockito_Example/pom.xml clean test
+  - mvn -f com.examples.exercise/pom.xml clean test
