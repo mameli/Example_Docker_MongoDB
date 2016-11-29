@@ -1,0 +1,21 @@
+sudo: false
+
+language: java
+
+jdk:
+      - oraclejdk8
+
+services:
+      - docker
+
+cache:
+      directories:
+            - $HOME/.m2
+
+      install:
+            - docker pull mongo
+
+
+      script:
+           - mvn -f com.examples.exercise/pom.xml clean verify coveralls:report
+
