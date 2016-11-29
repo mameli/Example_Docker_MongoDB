@@ -2,18 +2,17 @@ sudo: false
 
 language: java
 
-
+jdk:
+  - oraclejdk8
 services:
-      - docker
+  - docker
 
 cache:
-      directories:
-            - $HOME/.m2
+  directories:
+  - $HOME/.m2
 
-      install:
-            - docker pull mongo
+install:
+  - docker pull mongo
 
-
-      script:
-           - mvn -f com.examples.exercise/pom.xml clean verify coveralls:report
-
+script:
+  - mvn -f Mockito_Example/pom.xml clean test
